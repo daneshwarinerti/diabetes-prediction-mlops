@@ -1,0 +1,16 @@
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: diabetes-api
+  template:
+    metadata:
+      labels:
+        app: diabetes-api
+    spec:
+      containers:
+        - name: diabetes-api
+          image: diabetes-prediction-model:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8000
